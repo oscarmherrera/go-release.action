@@ -11,6 +11,9 @@ cd $PROJECT_ROOT
 
 pwd
 
+
+BINARY_NAME=${BINARY:-$PROJECT_NAME}
+
 #if [ $GO111MODULE == 'on' ]; then
 #go mod tidy
 #else 
@@ -27,7 +30,7 @@ fi
 if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
-  go build "${CMD_PATH}"
+  go build -o "${BINARY_NAME}" "${CMD_PATH}"
   OUTPUT="${PROJECT_NAME}${EXT}"
 fi
 
