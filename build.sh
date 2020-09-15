@@ -30,7 +30,8 @@ fi
 if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
-  go build -o "${BINARY_NAME}" "${CMD_PATH}"
+  go build "${CMD_PATH}"
+  cp "${PROJECT_NAME}${EXT}" "${BINARY_NAME}" 
   OUTPUT="${PROJECT_NAME}${EXT}"
 fi
 
