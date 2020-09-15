@@ -16,7 +16,7 @@ export
 #if [ $GO111MODULE == 'on' ]; then
 #go mod tidy
 #else 
-go get -v 
+ 
 #go get -v ./...
 #fi
 
