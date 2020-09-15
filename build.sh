@@ -11,8 +11,6 @@ cd $PROJECT_ROOT
 
 pwd
 
-export
-
 #if [ $GO111MODULE == 'on' ]; then
 #go mod tidy
 #else 
