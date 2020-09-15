@@ -31,7 +31,7 @@ if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
   go build "${CMD_PATH}"
-  cp "${PROJECT_NAME}${EXT}" "${BINARY_NAME}" 
+  cp "${PROJECT_NAME}${EXT}" "${BINARY_NAME}${EXT}" 
   OUTPUT="${PROJECT_NAME}${EXT}"
 fi
 
