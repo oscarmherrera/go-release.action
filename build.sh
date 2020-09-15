@@ -8,7 +8,12 @@ mkdir -p $PROJECT_ROOT
 rmdir $PROJECT_ROOT
 ln -s $GITHUB_WORKSPACE $PROJECT_ROOT
 cd $PROJECT_ROOT
+
+if [ $GO111MODULE == 'on' ]; then
+go mod tidy
+else 
 go get -v ./...
+fi
 
 EXT=''
 
