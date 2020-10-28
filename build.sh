@@ -16,6 +16,10 @@ BINARY_NAME=${BINARY:-$PROJECT_NAME}
 
 git config remote.origin.fetch refs/heads/*:refs/remotes/origin/*
 
+if [ $GOGET != '' ]; then
+go get $GOGET
+fi
+
 #if [ $GO111MODULE == 'on' ]; then
 #go mod tidy
 #else 
