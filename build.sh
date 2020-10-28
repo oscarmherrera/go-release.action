@@ -14,6 +14,8 @@ pwd
 
 BINARY_NAME=${BINARY:-$PROJECT_NAME}
 
+git config remote.origin.fetch refs/heads/*:refs/remotes/origin/*
+
 #if [ $GO111MODULE == 'on' ]; then
 #go mod tidy
 #else 
@@ -30,7 +32,6 @@ fi
 if [ -x "./build.sh" ]; then
   OUTPUT=`./build.sh "${CMD_PATH}"`
 else
-  rm -rf go.sum
   go build "${CMD_PATH}"
   cp "${PROJECT_NAME}${EXT}" "${BINARY_NAME}${EXT}" 
   OUTPUT="${PROJECT_NAME}${EXT}"
